@@ -1,8 +1,10 @@
 # STANDARD_2.8
 
-# STANDARD 2.8
+EcosimPro STANDARD workspace. Libraries and examples.
 
-STANDARD 2.8 is a core EcosimPro / PROOSIS workspace that provides reusable engineering libraries for building multi-domain, continuous-discrete simulation models in the EcosimPro Language (EL).
+## About
+
+STANDARD is a core EcosimPro / PROOSIS workspace that provides reusable engineering libraries for building multi-domain, continuous-discrete simulation models in the EcosimPro Language (EL).
 
 The workspace is intended as a foundation for developing, validating, and running simulation models across common engineering domains such as control systems, electrical networks, hydraulic circuits, mechanical systems, and thermal systems.
 
