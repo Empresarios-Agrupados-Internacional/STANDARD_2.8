@@ -1,140 +1,263 @@
 # STANDARD_2.8
 
-EcosimPro STANDARD workspace. Libraries and examples.
+This repository contains **source code and reference manuals from the EcosimPro / PROOSIS STANDARD 2.8 workspace**.
 
-## About
+The libraries documented here are **not intended to be downloaded, installed, or distributed from this repository**. The STANDARD libraries are part of the official EcosimPro / PROOSIS installation. This repository is intended to expose readable source material and manuals so they can be indexed, searched, and used as technical context.
 
-STANDARD is a core EcosimPro / PROOSIS workspace that provides reusable engineering libraries for building multi-domain, continuous-discrete simulation models in the EcosimPro Language (EL).
+## Purpose
 
-The workspace is intended as a foundation for developing, validating, and running simulation models across common engineering domains such as control systems, electrical networks, hydraulic circuits, mechanical systems, and thermal systems.
+The main purpose of this repository is to make the STANDARD 2.8 workspace easier to consult.
 
-## Overview
+## Important clarification
 
-This repository contains the STANDARD workspace for EcosimPro / PROOSIS version 2.8. It includes a set of reusable libraries, shared port definitions, examples, and supporting modelling assets that can be used to create hierarchical simulation models.
+This repository is **not** a package, installer, or replacement for the STANDARD workspace delivered with EcosimPro / PROOSIS.
 
-EcosimPro / PROOSIS models are typically built from:
+The official libraries are provided with the EcosimPro / PROOSIS installation. This repository only contains material intended for consultation, documentation, and knowledge retrieval.
 
-* **Libraries**, which group reusable modelling elements by discipline.
-* **Components**, which define physical or logical behaviour using variables, equations, topology, and events.
-* **Ports**, which define typed connection interfaces between components.
-* **Partitions**, which define the mathematical model generated from a component.
-* **Experiments**, which define simulation scenarios, boundary conditions, initial conditions, and solver settings.
+Do not treat this repository as:
 
-## Included Libraries
+* A package manager source.
+* A standalone build environment.
+* A replacement for the official EcosimPro / PROOSIS installation.
+* A complete runtime distribution of STANDARD libraries.
+* The authoritative source for licensing, installation, or commercial support.
 
-The STANDARD workspace includes the following main libraries.
+## Repository contents
+
+The repository is organized by library and example area:
+
+```text
+STANDARD_2.8/
+├── CONTROL/
+│   ├── sources/
+│   └── CONTROL_Library_Reference_Manual.md
+├── CONTROL_EXAMPLES/
+│   ├── autocode/
+│   └── sources/
+├── ELECTRICAL/
+│   └── sources/
+├── ELECTRICAL_EXAMPLES/
+├── HYDRAULIC/
+│   ├── sources/
+│   └── HYDRAULIC_Library_Reference_Manual.md
+├── HYDRAULIC_EXAMPLES/
+├── MATH/
+├── MATH_EXAMPLES/
+│   └── sources/
+├── MECHANICAL/
+│   ├── sources/
+│   └── MECHANICAL_Library_Reference_Manual.md
+├── MECHANICAL_EXAMPLES/
+├── PORTS_LIB/
+│   └── sources/
+├── THERMAL/
+└── THERMAL_EXAMPLES/
+```
+
+## Main sections
 
 ### PORTS_LIB
 
-Defines common connection ports used across the workspace, including:
+Contains common port definitions used by the STANDARD workspace.
 
-* `analog_signal` for real-valued signal vectors.
-* `bool_signal` for Boolean signal vectors.
-* `mech_rot` for one-dimensional rotational mechanical connections.
-* `mech_trans` for one-dimensional translational mechanical connections.
-* `elec` for electrical pins.
-* `thermal` for thermal connections using temperature and heat flow arrays.
+These ports define typed connection interfaces used across physical and logical domains, such as signals, mechanical connections, electrical pins, and thermal connections.
+
+Typical topics include:
+
+* Component interfaces.
+* Port variable names and meanings.
+* Connection semantics.
+* How different STANDARD libraries connect components together.
 
 ### MATH
 
-Provides mathematical utilities, constants, units, and helper functions required by the other libraries.
+Contains mathematical utilities, constants, units, and helper functions used by the other STANDARD libraries.
+
+Typical topics include:
+
+* Mathematical functions.
+* Units and constants.
+* Utility functions used by STANDARD components.
+* Shared mathematical conventions.
 
 ### CONTROL
 
-Provides standard control-oriented modelling blocks such as signal sources, transfer functions, controllers, and signal-processing components.
+Contains control-oriented modelling blocks and their reference documentation.
+
+Typical topics include:
+
+* Signal sources.
+* Signal processing blocks.
+* Transfer functions.
+* Controllers.
+* Continuous and discrete control components.
+
+Use `CONTROL/sources/` for implementation examples and `CONTROL/CONTROL_Library_Reference_Manual.md` for reference documentation.
+
+### CONTROL_EXAMPLES
+
+Contains examples showing how CONTROL components can be used in models and experiments.
+
+This section is especially useful when the question is about practical usage rather than component internals.
 
 ### ELECTRICAL
 
-Provides reusable electrical and electronic components for modelling electrical networks.
+Contains STANDARD electrical modelling components.
+
+Typical topics include electrical networks, electrical pins, electrical component equations, and related modelling patterns.
+
+### ELECTRICAL_EXAMPLES
+
+Contains examples of electrical systems built using STANDARD electrical components.
+
+Use this section when the question is about how to assemble, connect, or simulate electrical components in practice.
 
 ### HYDRAULIC
 
-Provides components for modelling hydraulic and fluid systems, including typical elements such as tanks, pipes, restrictions, and valves.
+Contains hydraulic and fluid-system modelling components and reference documentation.
+
+Typical topics include hydraulic nodes, pipes, tanks, restrictions, valves, and other hydraulic modelling elements.
+
+Use `HYDRAULIC/sources/` for implementation details and `HYDRAULIC/HYDRAULIC_Library_Reference_Manual.md` for reference documentation.
+
+### HYDRAULIC_EXAMPLES
+
+Contains usage examples for hydraulic systems.
+
+Use this section for practical questions about assembling hydraulic circuits, setting boundary conditions, or interpreting example simulations.
 
 ### MECHANICAL
 
-Provides reusable components for rotational and translational mechanical systems, such as inertias, springs, dampers, actuators, sensors, and mechanical connections.
+Contains mechanical modelling components and reference documentation.
+
+Typical topics include rotational and translational mechanical systems, inertias, springs, dampers, actuators, sensors, and mechanical connections.
+
+Use `MECHANICAL/sources/` for source-level implementation and `MECHANICAL/MECHANICAL_Library_Reference_Manual.md` for reference documentation.
+
+### MECHANICAL_EXAMPLES
+
+Contains examples of mechanical models built with STANDARD components.
+
+Use this section for practical modelling and simulation examples.
 
 ### THERMAL
 
-Provides thermal modelling components such as thermal nodes, conductors, heat-capacity elements, and heat-transfer components.
+Contains thermal modelling components.
+
+Typical topics include thermal nodes, heat flows, conductors, heat capacities, and heat-transfer components.
+
+### THERMAL_EXAMPLES
+
+Contains examples of thermal models and simulations.
+
+Use this section when the question concerns practical use of thermal components in EcosimPro / PROOSIS models.
+
+## How to use this repository
+
+This repository can be browsed directly as documentation and reference material.
+
+Recommended workflow:
+
+1. Select the domain of interest, such as `CONTROL`, `HYDRAULIC`, or `MECHANICAL`.
+2. Read the corresponding reference manual when available.
+3. Inspect source files to understand implementation details.
+4. Review the related `*_EXAMPLES` folder to see practical usage patterns.
+5. Validate execution or behaviour against the official EcosimPro / PROOSIS installation.
 
 ## Requirements
 
-To use this workspace, you need:
+To consult this repository as documentation or AI context, no EcosimPro / PROOSIS installation is required.
 
-* EcosimPro or PROOSIS installed.
-* A valid EcosimPro / PROOSIS license.
-* A supported C++ compiler configured in the tool.
-* The STANDARD 2.8 workspace loaded in the EcosimPro / PROOSIS environment.
+To execute, validate, or modify the models in an EcosimPro / PROOSIS environment, you need:
 
-For simulation execution, EcosimPro / PROOSIS generates and compiles C++ code from the EL models, so a compatible compiler must be available and correctly configured.
+* A valid EcosimPro or PROOSIS installation.
+* The STANDARD 2.8 libraries included with that installation.
+* A valid license.
+* A compatible C++ compiler configured in the tool, when simulation code generation and compilation are required.
 
-## Basic EL Example
+## Example consultation scenarios
 
-The following simplified example shows the style of an EL component used in EcosimPro / PROOSIS:
+### Asking about a CONTROL block
 
-```el
-COMPONENT firstOrderSystem "Simple first-order dynamic system"
+A user may ask:
 
-   DATA
-      REAL tau = 1.0 UNITS u_s "Time constant"
+> How does a standard PID controller work in EcosimPro?
 
-   DECLS
-      REAL x UNITS no_units "Input signal"
-      REAL y UNITS no_units "Output signal"
+The assistant should search the CONTROL reference manual and the relevant files under:
 
-   CONTINUOUS
-      y' = (x - y) / tau
-
-END COMPONENT
+```text
+CONTROL/sources/
+CONTROL_EXAMPLES/sources/
 ```
 
-## Experiments
+### Asking about a hydraulic component
 
-Experiments define how a compiled model is simulated. They may include initial conditions, bounds, solver configuration, reporting, steady-state calculations, or transient integration.
+A user may ask:
 
-Example experiment structure:
+> What parameters does this hydraulic valve component use?
 
-```el
-EXPERIMENT exp1 ON ExampleComponent.default
+The assistant should inspect:
 
-   INIT
-      -- Initial conditions
-
-   BOUNDS
-      -- Boundary conditions
-
-   BODY
-      TIME = 0
-      TSTOP = 10
-      CINT = 0.1
-      INTEG()
-
-END EXPERIMENT
+```text
+HYDRAULIC/HYDRAULIC_Library_Reference_Manual.md
+HYDRAULIC/sources/
+HYDRAULIC_EXAMPLES/
 ```
 
-## Modelling Guidelines
+### Asking how to connect components
 
-When adding or modifying EL components, follow these guidelines:
+A user may ask:
 
-* Keep components modular and reusable.
-* Use typed ports instead of connecting variables manually.
-* Place component blocks in the standard order: `PORTS`, `DATA`, `DECLS`, `OBJECTS`, `TOPOLOGY`, `INIT`, `DISCRETE`, `CONTINUOUS`.
-* Use `OBJECTS` only for class instances.
-* Instantiate components and define connections in `TOPOLOGY`.
-* Use construction parameters for structural sizes such as array dimensions.
-* Use `DATA` variables for configurable simulation values.
-* Avoid semicolons at the end of EL statements.
-* Use `DISCRETE` for `WHEN` event logic.
-* Use `CONTINUOUS` for algebraic and differential equations.
+> Which port type should I use to connect two thermal components?
 
-## License
+The assistant should inspect:
 
-Please refer to the license information included in this repository or provided with your EcosimPro / PROOSIS distribution.
+```text
+PORTS_LIB/sources/
+THERMAL/sources/
+THERMAL_EXAMPLES/
+```
 
-## Support
+## Documentation files
 
-For questions related to EcosimPro / PROOSIS installation, licensing, or commercial support, contact the official EcosimPro / PROOSIS support channels.
+The repository includes Markdown reference manuals for several libraries, including:
 
-For repository-specific issues, use the GitHub issue tracker if it is enabled for this project.
+```text
+CONTROL/CONTROL_Library_Reference_Manual.md
+HYDRAULIC/HYDRAULIC_Library_Reference_Manual.md
+MECHANICAL/MECHANICAL_Library_Reference_Manual.md
+```
+
+Additional Markdown manuals may be added to improve AI retrieval and human readability.
+
+## Recommended format for AI-oriented documentation
+
+When adding or updating documentation, prefer:
+
+* Markdown files with clear headings.
+* Tables for components, parameters, variables, ports, units, and examples.
+* Short, focused code snippets.
+* Explicit references to related source files.
+* Separate sections for assumptions, limitations, and usage notes.
+* Consistent terminology across source code and manuals.
+
+## Recommended metadata for source examples
+
+When adding or updating examples, consider using a short header such as:
+
+```ecosimpro
+/*-----------------------------------------------------------------------------------------
+ LIBRARY: <LIBRARY_NAME>
+ FILE: <FILE_NAME>
+ PURPOSE: Short description of the example
+ DOMAIN: Control | Electrical | Hydraulic | Mechanical | Thermal | Math | Ports
+ TOPICS: keyword1, keyword2, keyword3
+ RELATED_COMPONENTS: ComponentA, ComponentB
+-----------------------------------------------------------------------------------------*/
+```
+
+This makes the examples easier to retrieve through semantic search.
+
+## Maintainer
+
+Maintained by **Empresarios Agrupados Internacional**.
